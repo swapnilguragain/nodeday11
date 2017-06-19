@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    
+
+    <form action="/action_page.php">
+
+    <div class="form-group">
+      <label>Name:</label>
+      <input type="text" class="form-control" placeholder="Enter name" name="name">
+    </div>
+
+    <div class="form-group">
+      <label>College:</label>
+      <input type="text" class="form-control" placeholder="Enter college" name="college">
+    </div>
+
+    <div class="form-group">
+      <label>Course:</label>
+      <input type="text" class="form-control" placeholder="Enter course" name="course">
+    </div>
+
+    <div class="form-group">
+      <label>Semester:</label>
+      <input type="text" class="form-control" placeholder="Enter semester" name="semester">
+    </div>
+
+    <div class="form-group">
+      <label>Contact No.:</label>
+      <input type="text" class="form-control" placeholder="Enter contact number" name="contact">
+    </div>
+
+    <div class="form-group">
+      <label>Facebook Link:</label>
+      <input type="url" class="form-control" placeholder="Enter facebook link" name="link">
+    </div>
+
+    <div class="form-group">
+      <label>Your Photo:</label><br>
+      <button class="btn" type="">Choose file</button>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Upload</button>
+    <button type="submit" class="btn btn-danger">Delete</button>
+  </form>
+
+  </body>
+</html>
