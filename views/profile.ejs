@@ -20,15 +20,17 @@
 	    	</tr>
     	</thead>
     	<tbody>
+    	<% profiles.forEach(function(profile, i){ %>
 		    <tr>
-		    	<td><%= person.name %></td>
-		    	<td><%= person.college %></td>
-		    	<td><%= person.course %></td>
-		    	<td><%= person.semester %></td>
-		    	<td><%= person.number %></td>
-		    	<td><a href="<%= person.link %>" target='_blank'>guragainswapnil</a></td>
-		    	<td><img src="<%= person.image %>" width='100' height='150'></td>
+		      <td><%= profile.name %></td>
+		    	<td><%= profile.college %></td>
+		    	<td><%= profile.course %></td>
+		    	<td><%= profile.semester %></td>
+		    	<td><%= profile.number %></td>
+		    	<td><a href="<%= profile.link %>" target='_blank'><%= profile.link %></a></td>
+		    	<td><img src="<%= profile.image %>" width='100' height='150'></td>
 		    </tr>
+		  <% }) %> 
   		</tbody>
     </table>
 

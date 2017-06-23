@@ -1,7 +1,10 @@
 var express = require('express');
 var router = express.Router();
+// var Profile = require('../models/profiles.js');
 
 /* GET home page. */
+
+const Profile = require('../models/profiles');
 
 var person ={
 	name: 'Swapnil',
@@ -14,11 +17,17 @@ var person ={
 };
 
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', person });
+	Profile.getProfiles(function(err, profiles){
+		if (err) throw err; 
+		res.render('index', { title: 'WLiT Bootcamp 2017', profiles });
+	});
 });
 
 router.get('/profile', function(req, res){
-	res.render('profile', {title: 'Profile', person});
+	Profile.getProfiles(function(err, profiles){
+		if (err) throw err; 
+		res.render('profile', {title: 'Profile', profiles});
+	});
 });
 
 router.get('/add', function(req, res){
@@ -26,7 +35,17 @@ router.get('/add', function(req, res){
 });
 
 router.get('/edit', function(req, res){
-	res.render('edit', {title: 'Edit'});
+	Profile.getProfiles(function(err, profiles){
+		if (err) throw err; 
+		res.render('edit', {title: 'Edit', profiles});
+	});
+});
+
+router.get('/edit/:id', function(req, res){
+	Profile.findOne({_id: req.params.id}, function(err, profile){
+		res.render('edit', {title: 'Edit', profile});
+		if (err) throw err;
+	});
 });
 
 module.exports = router;
